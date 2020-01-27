@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+$main_color: #264489;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $main_color;
+}
+
+.app-container {
+    overflow-x: hidden;
+
+    .nav {
+        display: flex;
+        width: 100%;
+        background-color: white;
+        height: 3rem;
+        position: fixed;
+        z-index: 2;
+
+        img {
+            width: 40px;
+            height: 40px;
+            margin: auto 0;
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            bottom: 50%;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            margin: auto 15rem;
+
+            a {
+                text-decoration: none;
+                font-size: 1.5rem;
+                color: $main_color;
+                cursor: pointer;
+                height: 3rem;
+                width: 8rem;
+                text-align: center;
+                padding: .5rem 0 0 0;
+            }
+
+            .active {
+                background-color: $main_color;
+                color: white;
+            }
+        }
+    }
+
+    .content-container {
+        min-height: 100vh;
+        background-color: $main_color;
+        display: flex;
+        height: 100%;
+        margin: 3rem 0 0 0;
+
+        .fade-appear,
+        .fade-enter {
+            opacity: 0;
+            z-index: 1
+        };
+        .fade-appear-active,
+        .fade-enter.fade-enter-active {
+            transition: opacity 4000ms linear 150ms
+        }
+
+        .fade-exit {
+            opacity: 1;
+        }
+
+        .fade-exit.fade-exit-active {
+            opacity: 0;
+            transition: opacity 150ms linear
+        }
+        
+
+        .documentsHolder {
+            width: 100%;
+            position: absolute;
+            background-color: $main_color;
+
+            .title-wrapper {
+                display: flex;
+                .title {
+                    width: 20rem;
+                    margin: 2rem 0 2rem 6rem;
+                    color: white;
+                    font-size: 1.55rem;
+                    text-align: center;
+                    opacity: 25%;
+                    cursor: pointer;
+                }
+            }
+
+            .additionalLinks {
+                position: fixed;
+                top: 3rem;
+                right: 0;
+
+                .links {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 1.25rem;
+
+                    a {
+                        color: white;
+                        text-decoration: underline;
+                        text-align: left;
+                        margin: 1rem;
+                    }
+                }
+            }
+
+            .documentWrapper {
+                margin: 0 5rem 0 0;
+                a {
+                    text-align: center;
+                    text-decoration: none;
+
+                    .documentSVG {
+                        transition: ease-in-out 0.3s;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                        svg {
+                            width: 150px;
+                            height: 150px;
+                            padding: 0 auto;
+                            transform: scale(1.1);
+                            fill: white;
+                        }  
+                    } 
+                    p {
+                        color: white;
+                        font-size: 1.5rem;
+                        margin: 2rem 0;
+                        width: 150px;
+                    }
+                }
+            }
+
+            .maindocs {
+                display: flex;
+                margin: 5rem 0 0 0;
+                padding: 0 0 0 5rem;
+            }
+
+            .segregatedPDFs {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                .title {
+                    width: 20rem;
+                    margin: 2rem 0 2rem 6rem;
+                    border-bottom: 2px solid white;
+                    color: white;
+                    font-size: 1.55rem;
+                }
+
+                .documents {
+                    display: flex;
+                    padding: 0 0 0 5rem;
+                }
+            }
+        }
+    }
+}
