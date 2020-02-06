@@ -5,7 +5,7 @@ import Nav from './components/nav';
 import Home from './components/home';
 import Calm from './components/calm';
 import Manuals from './components/manuals';
-import Training from './components/training';
+import Training from './components/training-components/training';
 import Safety from './components/safety';
 import Memos from './components/memos';
 import "./styles.scss";
@@ -18,10 +18,10 @@ export default class App extends React.Component {
                     <Nav/>
                     <div className="content-container">
                         <Switch >
-                            <Route path="/" exact component={props => <Home data={documents[0]}/>}/>
+                            <Route exact path="/" component={props => <Home data={documents[0]}/>}/>
                             <Route path="/calm" component={props => <Calm data={documents[1]} props={props}/>}/>
-                            <Route path="/manuals" component={props => <Manuals />}/>
-                            <Route path="/training" component={props => <Training />}/>
+                            <Route path="/manuals" component={props => <Manuals data={documents[2]} />}/>
+                            <Route path="/training" component={props => <Training data={documents[3]}/>}/>
                             <Route path="/safety" component={props => <Safety />}/>
                             <Route path="/memos" component={props => <Memos />}/>
                         </Switch>

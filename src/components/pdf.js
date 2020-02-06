@@ -10,7 +10,7 @@ const PDF = ({documentInfo, count, abbreviatedlink, onCalm}) => {
         <Spring
             from={{opacity: 0}}
             to={{opacity: 1}}
-            config={{delay: `${count * 450 - count * 300}`, duration: 250}}
+            config={{delay: `${count * 150}`, duration: 650}}
         >
             {props => (
                 <div style={props} className="documentWrapper">

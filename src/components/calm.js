@@ -3,7 +3,6 @@ import { Route, NavLink, Redirect } from 'react-router-dom';
 import CalmReports from './calmReports';
 
 const Calm = ({data}) => {
-
     return (
         <div className="Calm documentsHolder">
             <div className="title-wrapper">
