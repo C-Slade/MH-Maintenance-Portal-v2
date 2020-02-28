@@ -3,8 +3,8 @@ import { ReactSVG } from 'react-svg';
 import documentSVG from '../images/document.svg';
 import { Spring } from 'react-spring/renderprops';
 
-const PDF = ({documentInfo, count, abbreviatedlink, onCalm}) => {
-    const getLink = !onCalm ? documentInfo.link : abbreviatedlink ? documentInfo.abbreviatedlink : documentInfo.fullLink;
+const PDF = ({documentInfo, count, abbreviatedlink, onCalmReports}) => {
+    const getLink = !onCalmReports ? documentInfo.link : abbreviatedlink ? documentInfo.abbreviatedlink : documentInfo.fullLink;
 
     return (
         <Spring

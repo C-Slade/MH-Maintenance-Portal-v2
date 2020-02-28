@@ -9,10 +9,10 @@ import ExamResults from './examResults';
 
 const SubListings = ({listingType, data, returnInfo, route, toggleRedirect, readyToRedirect}) => {
     const getQuizzes = () => data.map((quiz, index) => <Quiz quizInfo={quiz} key={uuid.v4()} count={index} returnInfo={returnInfo} route={route} toggleRedirect={toggleRedirect} readyToRedirect={readyToRedirect}/>);
-    const getReviews = () => data.map((review, index) => <Review reviewInfo={review} key={uuid.v4()} count={index} returnInfo={returnInfo}/>);
+    const getReviews = () => data.map((review, index) => <Review reviewInfo={review} key={uuid.v4()} count={index} returnInfo={returnInfo} route={route} toggleRedirect={toggleRedirect} readyToRedirect={readyToRedirect}/>);
     const getNotes = () => data.map((note, index) => <Note noteInfo={note} key={uuid.v4()} count={index} returnInfo={returnInfo}/>);
-    const getForms = () => data.map((form, index) => <Form formInfo={form} key={uuid.v4()} count={index} returnInfo={returnInfo}/>);
-    const getExamResults = () => <ExamResults resultsInfo={data.examResults} key={uuid.v4()} count={0} returnInfo={returnInfo}/>
+    const getForms = () => data.map((form, index) => <Form formInfo={form} key={uuid.v4()} count={index} returnInfo={returnInfo} route={route} toggleRedirect={toggleRedirect} readyToRedirect={readyToRedirect}/>);
+    const getExamResults = () => data.map((exam, index) => <ExamResults resultsInfo={exam} key={uuid.v4()} count={index} returnInfo={returnInfo} route={route} toggleRedirect={toggleRedirect} readyToRedirect={readyToRedirect}/>);
     return (
         <>
             <div className={`listings ${listingType === 'notes' ? 'note-listings' : ''}`}>

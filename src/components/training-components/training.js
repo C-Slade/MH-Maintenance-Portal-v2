@@ -7,9 +7,9 @@ import uuid from 'uuid';
 
 const Training = ({data}) => {
     const [readyToRedirect, toggleRedirect] = useState(false);
-    const [route, setRoute ] = useState('');
-    const [trainingInfo, setTrainingInfo ] = useState('');
-    const [trainingInfoType, setTrainingInfoType ] = useState('');
+    const [route, setRoute] = useState('');
+    const [trainingInfo, setTrainingInfo] = useState('');
+    const [trainingInfoType, setTrainingInfoType] = useState('');
 
     const toggleDynamicRoute = (boolean, route, trainingInfo, type) => {
         setRoute(route);

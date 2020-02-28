@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
-$main_color: #264489;
+$main_color: #152d64;
+
+// break points
+$break-medium: 1060px;
+$break-small: 750px;
+$break-x-small: 448px;
 
 * {
     box-sizing: border-box;
     font-family: 'Work Sans', sans-serif;
     padding: 0;
     margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -39,6 +48,15 @@ body {
             justify-content: space-around;
             width: 60%;
             margin: auto 15rem;
+            
+            @media screen and (max-width: $break-medium) {
+                width: 80%;
+                margin: auto 5rem;
+                font-size: 1.25rem;
+            }
+            @media screen and (max-width: $break-small) {
+                display: none;
+            }
 
             a {
                 text-decoration: none;
@@ -49,6 +67,10 @@ body {
                 width: 8rem;
                 text-align: center;
                 padding: .5rem 0 0 0;
+
+                @media screen and (max-width: $break-medium) {
+                    font-size: 1.25rem;
+                }
             }
 
             .active {
@@ -58,29 +80,129 @@ body {
         }
     }
 
+    .phone-nav {
+        display: none;
+
+        @media screen and (max-width: $break-small) {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        img {
+            position: unset;
+        }
+
+        .phone-menu-icon {
+            margin: auto 0;
+            cursor: pointer;
+            svg {
+                width: 2rem;
+                height: 2rem;
+                fill: $main_color;
+            }
+        }
+
+        .phone-nav-dropdown {
+            position: absolute;
+            top: 2.5rem;
+            background-color: white;
+            z-index: 100;
+            height: 100vh;
+            width: 60vw;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.938);
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                margin: 5rem auto;
+
+                div {
+                    padding: 0.75rem 0;
+                    a {
+                        color: $main_color;
+                        font-size: 2.25rem;
+                        text-transform: uppercase;
+
+                        @media screen and (max-width: $break-x-small) {
+                            font-size: 2rem;
+                        }
+                    }
+                    .phone-nav-active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .desktop-nav {
+        @media screen and (max-width: $break-small) {
+            display: none;
+        }
+    }
+
     .content-container {
         background-color: $main_color;
         display: flex;
         height: 100%;
         margin: 3rem 0 0 0;
 
-        .fade-appear,
-        .fade-enter {
-            opacity: 0;
-            z-index: 1
-        };
-        .fade-appear-active,
-        .fade-enter.fade-enter-active {
-            transition: opacity 4000ms linear 150ms
-        }
+        .additionalLinksTab {
+            position: absolute;
+            background-color: white;
+            z-index: 1;
+            right: 0;
+            width: 12rem;
+            top: 0;
+            display: none;
+            justify-content: center;
+            text-transform: uppercase;
+            border-bottom-left-radius: 0.25rem;
 
-        .fade-exit {
-            opacity: 1;
-        }
+            @media screen and (max-width: $break-small) {
+                display: flex;
+                flex-direction: column;
+            }
 
-        .fade-exit.fade-exit-active {
-            opacity: 0;
-            transition: opacity 150ms linear
+            .activate-wrapper {
+                display: flex;
+                position: absolute;
+                top: 0;
+                margin: 0.5rem 0 2rem 0;
+            }
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                height: 10rem;
+                position: relative;
+                margin-top: 3rem;
+
+                a {
+                    margin: 1rem;
+                    color: $main_color;
+                    font-weight: bold;
+                }
+            }
+
+            p {
+                margin: auto 0.25rem;
+            }
+
+            .arrow {
+                display: flex;
+                justify-content: center;
+                height: 24px;
+                margin: auto 0.25rem;
+                
+                svg {
+                    transform: scale(0.75);
+                    fill: black;
+                }
+            }
         }
 
         .Training {
@@ -93,19 +215,31 @@ body {
             justify-content: center;
 
             iframe {
-                width: 70vw;
-                height: 70vh;
+                min-width: 70vw;
+                min-height: 70vh;
                 align-self: center;
                 border: none;
                 margin: 2rem 0;
+                overflow: none;
+            }
+            .spinner {
+                position: absolute;
+                top: 50vh;
+                left: 50%;
+                transform: scale(1.75);
             }
 
-            .quiz {
-                width: 40vw;
+            .small-iframe {
+                @media screen and (max-width: $break-x-small) {
+                    width: 95% !important;
+                    height: 490rem !important;
+                }
             }
 
             .selected-training-heading {
                 text-transform: uppercase;
+                text-align: center;
+                width: 80%;
             }
 
             .selected-training-goBack {
@@ -122,6 +256,12 @@ body {
                 color: white;
                 margin: 5rem 0 0 6rem;
                 text-transform: uppercase;
+
+                
+                @media screen and (max-width: $break-x-small) {
+                    text-align: center;
+                    margin: 5rem 0 0 0;
+                }
             }
 
             .listings {
@@ -130,18 +270,31 @@ body {
                 position: relative;
                 padding: 0 0 0 5rem;
                 margin: 5rem 0 0 0;
-                width: 80%;
+
+                @media screen and (max-width: $break-x-small) {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 5rem auto 0 auto;
+                    padding: 0;
+                }
 
                 .title {
                     position: absolute;
                     top: -3rem;
                     left: 6.2rem;
                     border-bottom: 2px solid white;
-                    width: 20rem;
+                    max-width: 20rem;
+                    min-width: 12rem;
+                    width: 20%;
                     text-align: left;
                     font-size: 1.5rem;
                     color: white;
                     text-transform: uppercase;
+
+                    @media screen and (max-width: $break-x-small) {
+                        text-align: center;
+                        left: 8.5%;
+                    }
                 }
 
                 
@@ -151,6 +304,10 @@ body {
                     display: flex;
                     align-items: center;
                     text-transform: uppercase;
+
+                    @media screen and (max-width: $break-x-small) {
+                        width: 12rem;
+                    }
 
                     p {
                         color: white;
@@ -220,6 +377,10 @@ body {
                 margin: 3rem 0;
                 font-size: 3rem;
                 color: white;
+
+                @media screen and (max-width: $break-small) {
+                    font-size: 2rem;
+                }
             }
 
             .select-training {
@@ -228,8 +389,7 @@ body {
                 align-self: center;
                     
                     a {
-                        width: 30rem;
-                        height: 5rem;
+                        max-width: 30rem;
                         border: 2px solid white;
                         margin: 1rem 0;
                         border-radius: 0.75rem;
@@ -244,6 +404,10 @@ body {
                         text-decoration: none;
                         color: white;
 
+                        @media screen and (max-width: $break-small) {
+                            font-size: 1.5rem;
+                        }
+
                         &:hover {
                             transform: scale(1.075);
                         }
@@ -257,24 +421,46 @@ body {
             width: 100%;
             position: absolute;
             background-color: $main_color;
+            padding: 0 0 0 2rem;
 
+            @media screen and (max-width: $break-x-small) {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+            }
             .title-wrapper {
                 display: flex;
+                max-width: 35rem;
+                margin: 0 0 0 3rem;
+
+                @media screen and (max-width: $break-small) {
+                    flex-direction: column;
+                    margin: 2rem auto;
+                }
+
                 .title {
-                    margin: 2rem 0 2rem 6rem;
-                    color: white;
+                    margin: 2rem 2rem 2rem 0;
+                    color: rgba(255, 255, 255, 0.397);
                     font-size: 1.55rem;
                     text-align: center;
-                    opacity: 25%;
                     cursor: pointer;
-                    text-transform: uppercase;;
+                    text-transform: uppercase;
+                    visibility: visible;
+
+                    @media screen and (max-width: $break-small) {
+                        margin: 1rem auto;
+                    }
+                }
+
+                .active {
+                    color: white;
                 }
             }
 
             .oas-cards {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, 14rem);
-                padding: 0 0 0 5rem;
                 margin: 5rem 0 0 0;
             }
 
@@ -282,6 +468,11 @@ body {
                 position: fixed;
                 top: 3rem;
                 right: 0;
+                display: block;
+
+                @media screen and (max-width: $break-small) {
+                    display: none;
+                }
 
                 .links {
                     display: flex;
@@ -293,12 +484,16 @@ body {
                         text-decoration: underline;
                         text-align: left;
                         margin: 1rem;
+                        text-transform: capitalize;
                     }
                 }
             }
 
             .documentWrapper {
-                margin: 0 5rem 0 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
                 a {
                     text-align: center;
                     text-decoration: none;
@@ -321,32 +516,43 @@ body {
                         font-size: 1.5rem;
                         margin: 2rem 0;
                         width: 150px;
+                        text-transform: uppercase;
                     }
                 }
             }
 
             .maindocs {
-                display: flex;
-                margin: 5rem 0 0 0;
-                padding: 0 0 0 5rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, 14rem);
+                margin: 5rem auto 0 auto;
             }
 
             .segregatedPDFs {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
+                @media screen and (max-width: $break-x-small) {
+                    align-items: center;
+                }
 
                 .title {
                     width: 20rem;
-                    margin: 2rem 0 2rem 6rem;
+                    margin: 2rem 0 2rem 3rem;
                     border-bottom: 2px solid white;
                     color: white;
                     font-size: 1.55rem;
+                    text-transform: capitalize;
+
+                    @media screen and (max-width: $break-x-small) {
+                        margin: 2rem 0 2rem 0rem;
+                        text-align: center;
+                        width: 80%;
+                    }
                 }
 
                 .documents {
-                    display: flex;
-                    padding: 0 0 0 5rem;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, 14rem);
                 }
             }
         }

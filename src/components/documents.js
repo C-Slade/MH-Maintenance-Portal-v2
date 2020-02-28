@@ -504,7 +504,7 @@ export default [
                 forms: [
                     {
                         name: "course evaluation form tr-0011",
-                        link: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0",
+                        link: "https://docs.google.com/forms/d/e/1FAIpQLSc9qqD9MoYaPltRmv-IhuXWg15Wo3H6eXagqBGl7UIxYT-NjQ/viewform?embedded=true",
                     },
                 ],
                 notes: [
@@ -512,7 +512,12 @@ export default [
                         message: "* Only required for Incoming/Recieving Inspectors"
                     }
                 ],
-                examResults: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0"
+                examResults: [
+                    {
+                        link: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0",
+                        name: "part 145 exam results"
+                    }
+                ]
             },
             {
                 type: "part 135",
@@ -567,7 +572,12 @@ export default [
                         message: "** Only required for RII Inspectors",
                     },
                 ],
-                examResults: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0"
+                examResults: [
+                    {
+                        link: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0",
+                        name: "part 135 exam results"
+                    }
+                ]
             },
             {
                 type: "fuel",
@@ -607,7 +617,12 @@ export default [
                     }
                 ],
 
-                examResults: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0",
+                examResults: [
+                    {
+                        link: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0",
+                        name: "fuel exam results"
+                    }
+                ]
             },
             {
                 type: "human factors",
@@ -632,8 +647,163 @@ export default [
                     }
                 ],
 
-                examResults: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0"
+                examResults: [
+                    {
+                        link: "https://docs.google.com/presentation/d/1abf_CeyK4rh-wlUzGe0rnuCKyJzav6NyqPrXhH1i-Zk/embed?start=false&loop=false&delayms=3000&slide=id.gc6f80d1ff_0_0",
+                        name: "human factors exam results"
+                    }
+                ]
             },
         ]
+    },
+    {
+        page: "safety",
+        documents: {
+            easilyAccessedPDFs: [
+                {
+                    name: "safety notes",
+                    link: "http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                    name: "risk management",
+                    link: "http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                    name: "hse manual",
+                    link: "http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                    name: "event investigation",
+                    link: "http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                    name: "emergency response plan",
+                    link: "http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                    name: "internal evaluation",
+                    link: "http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                    name: "sms manual",
+                    link: "http://www.africau.edu/images/default/sample.pdf"
+                },
+            ],
+            segregatedPDFs: [
+                {
+                    title: "forms",
+                    documents: [
+                        {
+                            name: "gor",
+                            link: "http://www.africau.edu/images/default/sample.pdf"
+                        },
+                        {
+                            name: "station checklist", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "first report of injury", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "flight irregularity", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                    ]
+                },
+                {
+                    title: "archive",
+                    documents: [
+                        {
+                            name: "2015",
+                            link: "http://www.africau.edu/images/default/sample.pdf"
+                        },
+                        {
+                            name: "2016", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2017", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2018", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                    ]
+                },
+            ]
+        },
+        links: [
+            {
+                name: "safety data sheet",
+                link: "https://mybell.com/bell/en/USD/login"
+            },
+        ]
+    },
+    {
+        page: "memos",
+        documents: {
+            segregatedPDFs: [
+                {
+                    title: "maintenance memos",
+                    documents: [
+                        {
+                            name: "2014",
+                            link: "http://www.africau.edu/images/default/sample.pdf"
+                        },
+                        {
+                            name: "2015", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2016", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2017", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2018", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2019", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "cass", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                    ]
+                },
+                {
+                    title: "operation memos",
+                    documents: [
+                        {
+                            name: "2014",
+                            link: "http://www.africau.edu/images/default/sample.pdf"
+                        },
+                        {
+                            name: "2015", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2016", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2017", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                        {
+                            name: "2018", 
+                            link: "http://www.africau.edu/images/default/sample.pdf"  
+                        },
+                    ]
+                },
+            ]
+        },
     }
 ]

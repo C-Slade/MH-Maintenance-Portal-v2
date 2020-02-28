@@ -3,9 +3,9 @@ import { ReactSVG } from 'react-svg';
 import Exam from '../../images/exam.svg';
 import { Spring } from 'react-spring/renderprops';
 
-const ExamResults = ({resultsInfo, count, returnInfo}) => {
-    const returnData = () => {
-        returnInfo()
+const ExamResults = ({resultsInfo, count, route, toggleRedirect, readyToRedirect}) => {
+    const returnTrainingReview = () => {
+        toggleRedirect(true, route, resultsInfo, "examResults");
     }
     return (
         <Spring
@@ -16,7 +16,7 @@ const ExamResults = ({resultsInfo, count, returnInfo}) => {
             {props => (
                 <div className="ExamLink traininglink" style={props}>
                     <div className="icon-holder">
-                        <div className="exam-wrapper" onClick={returnData}>
+                        <div className="exam-wrapper" onClick={returnTrainingReview}>
                             <ReactSVG src={Exam} className="examResults"/>
                             <h4>View Results</h4>
                         </div>

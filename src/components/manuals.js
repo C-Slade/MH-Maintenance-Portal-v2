@@ -2,13 +2,16 @@ import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import MainManuals from './manuals-manuals';
 import OasCards from './manuals-oascards';
+import AdditionalLinksButton from './additionalLinks';
+import { withRouter } from 'react-router';
 
-const Manuals = ({data}) => {
+const Manuals = ({data, location}) => {
     return (
         <div className="Manuals documentsHolder">
+            <AdditionalLinksButton links={data.links}/>
             <div className="title-wrapper">
-                <NavLink exact to="/manuals" className="title" activeStyle={{opacity: "100%"}}>Manuals</NavLink>
-                <NavLink to="/manuals/oas-cards" className="title" activeStyle={{opacity: "100%"}}>Oas Cards</NavLink>
+                <NavLink exact to="/manuals" className={location.pathname === "/manuals" ? "title active" : "title" }>Manuals</NavLink>
+                <NavLink to="/manuals/oas-cards" className={location.pathname === "/manuals/oas-cards" ? "title active" : "title" }>Oas Cards</NavLink>
             </div>
             <div className="additionalLinks">
                 <div className="links">
@@ -21,4 +24,4 @@ const Manuals = ({data}) => {
     )
 }
 
-export default Manuals;
+export default withRouter(Manuals);

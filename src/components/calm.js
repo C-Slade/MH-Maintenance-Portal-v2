@@ -1,13 +1,16 @@
 import React from 'react';
 import { Route, NavLink, Redirect } from 'react-router-dom';
 import CalmReports from './calmReports';
+import AdditionalLinksButton from './additionalLinks';
+import { withRouter } from 'react-router';
 
-const Calm = ({data}) => {
+const Calm = ({data, location}) => {
     return (
         <div className="Calm documentsHolder">
+            <AdditionalLinksButton links={data.links}/>
             <div className="title-wrapper">
-                <NavLink to="/calm/abbreviated" className="title" activeStyle={{opacity: "100%"}}>Abbreviated Calm Reports</NavLink>
-                <NavLink to="/calm/full" className="title" activeStyle={{opacity: "100%"}}>Full Calm Reports</NavLink>
+                <NavLink to="/calm/abbreviated" className={location.pathname === "/calm/abbreviated" ? "title active" : "title"}>Abbreviated Calm Reports</NavLink>
+                <NavLink to="/calm/full" className={location.pathname === "/calm/full" ? "title active" : "title"}>Full Calm Reports</NavLink>
             </div>
             <div className="additionalLinks">
                 <div className="links">
@@ -21,4 +24,4 @@ const Calm = ({data}) => {
         </div>
     )
 }
-export default Calm;
+export default withRouter(Calm);

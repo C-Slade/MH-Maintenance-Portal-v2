@@ -26,10 +26,10 @@ const Quiz = ({quizInfo, count, route, toggleRedirect, readyToRedirect}) => {
                                 <ReactSVG src={Pen} className="pen" onClick={returnTrainingQuiz}/>
                                 <h4>Quiz</h4>
                             </div>
-                            <div className="book-wrapper">
+                            {quizInfo.reviewLink ? <div className="book-wrapper">
                                 <ReactSVG src={Book} className="book" onClick={returnTrainingReview}/>
                                 <h4>Review</h4>
-                            </div>
+                            </div> : null }
                         </div>
                     </div>
                 )}

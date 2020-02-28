@@ -3,9 +3,9 @@ import { ReactSVG } from 'react-svg';
 import FormSVG from '../../images/form.svg';
 import { Spring } from 'react-spring/renderprops';
 
-const Form = ({formInfo, count, returnInfo}) => {
-    const returnData = () => {
-        returnInfo()
+const Form = ({formInfo, count, route, toggleRedirect, readyToRedirect}) => {
+    const returnTrainingForm = () => {
+        toggleRedirect(true, route, formInfo, "form");
     }
     return (
         <Spring
@@ -14,11 +14,11 @@ const Form = ({formInfo, count, returnInfo}) => {
             config={{delay: `${count * 150}`, duration: 650}}
         >
             {props => (
-                <div className="quizLink traininglink" style={props} onClick={returnData}>
+                <div className="quizLink traininglink" style={props}>
                     <h4>{formInfo.name}</h4>
                     <div className="icon-holder">
                         <div className="form-wrapper">
-                            <ReactSVG src={FormSVG} className="form"/>
+                            <ReactSVG src={FormSVG} className="form" onClick={returnTrainingForm}/>
                             <h4>Form</h4>
                         </div>
                     </div>
